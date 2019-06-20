@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>CarTracker</groupId>
+	<artifactId>car-tracker-</artifactId>
+	<version>0.1.0</version>
+	<packaging>pom</packaging>
+
+	<name>CarTracker</name>
+
+	<modules>
+		<module>car-tracker-parent</module>
+		<module>car-tracker-commons</module>
+		<module>car-tracker-persistence</module>
+		<module>car-tracker-business</module>
+		<module>car-tracker-rest-api</module>
+		<module>car-tracker-server</module>
+	</modules>
+
+</project>

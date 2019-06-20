@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>CarTracker</groupId>
+		<artifactId>car-tracker-parent</artifactId>
+		<version>0.1.0</version>
+		<relativePath>../car-tracker-parent/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>car-tracker-rest-api</artifactId>
+	<packaging>jar</packaging>
+
+	<name>CarTracker Rest API</name>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+		</dependency>
+
+		<!-- -->
+		<!-- CarTracker modules -->
+		<!-- -->
+		<dependency>
+			<groupId>CarTracker</groupId>
+			<artifactId>car-tracker-business</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>CarTracker</groupId>
+			<artifactId>car-tracker-commons</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

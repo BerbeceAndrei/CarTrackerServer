@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>CarTracker</groupId>
+	<artifactId>car-tracker-parent</artifactId>
+	<version>0.1.0</version>
+	<packaging>pom</packaging>
+
+	<name>CarTracker Parent</name>
+	<description>Parent module</description>
+
+	<properties>
+		<server.version>0.1.0</server.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxrs</artifactId>
+				<version>3.7.0.Final</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.9.9</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>8.0.16</version>
+			</dependency>
+
+			<!-- -->
+			<!-- CarTracker modules -->
+			<!-- -->
+			<dependency>
+				<groupId>CarTracker</groupId>
+				<artifactId>car-tracker-commons</artifactId>
+				<version>${server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>CarTracker</groupId>
+				<artifactId>car-tracker-persistence</artifactId>
+				<version>${server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>CarTracker</groupId>
+				<artifactId>car-tracker-business</artifactId>
+				<version>${server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>CarTracker</groupId>
+				<artifactId>car-tracker-rest-api</artifactId>
+				<version>${server.version}</version>
+			</dependency>
+
+			<!-- -->
+			<!-- Testing dependency -->
+			<!-- -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.4.1</version>
+				<configuration>
+					<rules>
+						<dependencyConvergence />
+					</rules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
